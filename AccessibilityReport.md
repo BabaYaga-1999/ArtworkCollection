@@ -1,0 +1,9 @@
+![image-20230625175216921](./image-20230625175216921.png)
+
+![image-20230625175315656](./image-20230625175315656.png)
+
+![image-20230625175408899](./image-20230625175408899.png)
+
+Test results for NotFound, Profile and TodoDetail components:
+
+![image-20230625175739213](./image-20230625175739213.png)

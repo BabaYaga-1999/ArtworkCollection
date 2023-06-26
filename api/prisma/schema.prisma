@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model TodoItem {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String   @db.VarChar(255)
+  completed Boolean  @default(false)
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+  comments  Comment[]
+  favorites Favorite[]
+
+  @@index([authorId])
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  auth0Id      String   @unique @default("")
+  name         String?
+  todos        TodoItem[]
+  comments     Comment[]
+  favorites    Favorite[]
+  stripeId     String?
+  currentPlan  plans? @default(FREE)
+}
+
+enum plans {
+  FREE
+  BASIC
+  PRO
+  MAX
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  text      String
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+  todoItem  TodoItem @relation(fields: [todoItemId], references: [id])
+  todoItemId Int
+
+  @@index([authorId, todoItemId])
+}
+
+model Favorite {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  todoItem  TodoItem @relation(fields: [todoItemId], references: [id])
+  todoItemId Int
+
+  @@index([userId, todoItemId])
+}

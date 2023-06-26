@@ -1,0 +1,7 @@
+runtime: nodejs16
+env_variables:
+  DATABASE_URL: 'mysql://con4l1tyuerhlb0xk79t:pscale_pw_dMCHHN1lBFLl0yYLK9ahOOEM6aTal7pq1luT7Zd1hNN@aws.connect.psdb.cloud/deploy-test?sslaccept=strict'
+  AUTH0_AUDIENCE: "https://api.todos"
+  AUTH0_ISSUER: "https://dev-qgt7zq4iuhc4s5d5.us.auth0.com/"
+  AUTH0_JWK_URI: "https://dev-qgt7zq4iuhc4s5d5.us.auth0.com/.well-known/jwks.json"
+  PORT: 8080

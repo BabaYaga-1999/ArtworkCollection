@@ -1,0 +1,123 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content-section {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-wrap: break-word;
+  background: #f9f9f9;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.content-section p {
+  margin-bottom: 0.5rem;
+  white-space: pre-wrap; 
+}
+
+.content-section a {
+  color: dodgerblue;
+  text-decoration: none;
+}
+
+.content-section a:hover {
+  color: royalblue;
+}
+
+.btn-primary,
+.btn-secondary {
+  margin-top: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease-out;
+}
+
+/* Styles for comment section */
+.comment-container {
+  width: 100%;
+  word-wrap: break-word;
+  /* breaks the word at the end of the line */
+  overflow-wrap: break-word;
+  /* breaks the word at the end of the line */
+}
+
+.btn-primary {
+  font-size: 18px;
+  background-color: coral;
+  color: whitesmoke;
+}
+
+.btn-secondary {
+  font-size: 18px;
+  background-color: cornflowerblue;
+  color: whitesmoke;
+}
+
+.exit-button {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.exit-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: black;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .home {
+    padding: 1rem;
+    /* Reducing padding on smaller screens */
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .exit-button {
+    font-size: 14px;
+    /* Reducing font size on smaller screens */
+    padding: 8px;
+    /* Reducing button padding on smaller screens */
+  }
+}
